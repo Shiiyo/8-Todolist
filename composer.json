@@ -41,9 +41,10 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.0",
+        "phpunit/php-code-coverage": "^8.0",
         "symfony/dotenv": "^4.0",
-        "phpunit/php-code-coverage": "^8.0"
+        "symfony/maker-bundle": "^1.20",
+        "symfony/phpunit-bridge": "^4.0"
     },
     "config": {
         "preferred-install": {
@@ -53,13 +54,11 @@
     },
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle",
             "App\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\AppBundle\\": "tests/AppBundle",
             "App\\Tests\\": "tests/"
         }
     },
