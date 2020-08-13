@@ -24,5 +24,6 @@ security:
             logout: ~
 
     access_control:
+        - { path: ^/users/list, roles: ROLE_ADMIN}
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/users, roles: IS_AUTHENTICATED_ANONYMOUSLY }
