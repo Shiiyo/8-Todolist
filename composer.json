@@ -44,7 +44,7 @@
         "phpunit/php-code-coverage": "^8.0",
         "symfony/dotenv": "^4.0",
         "symfony/maker-bundle": "^1.20",
-        "symfony/phpunit-bridge": "^4.0"
+        "symfony/phpunit-bridge": "^5.1"
     },
     "config": {
         "preferred-install": {

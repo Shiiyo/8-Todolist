@@ -11,5 +11,5 @@ https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
 
 ## Tests
 Lunch unit tests with the command : </br>
-<code>./vendor/bin/simple-phpunit</code> </br>
+<code>php bin/phpunit</code> </br>
 You can see the coverage on <code>/web/code-coverage/index.html</code>

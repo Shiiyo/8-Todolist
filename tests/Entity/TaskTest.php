@@ -3,13 +3,14 @@
 namespace App\Tests\Entity;
 
 use App\Entity\Task;
+use App\Entity\User;
 use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase
 {
     private $task;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->task = new Task();
     }
@@ -33,14 +34,16 @@ class TaskTest extends TestCase
         $this->assertSame('Test', $this->task->getContent());
     }
 
-    public function testIsNotDone()
-    {
-        $this->assertSame(false, $this->task->isDone());
-    }
-
     public function testIsDone()
     {
-        $this->task->toggle(true);
-        $this->assertSame(true, $this->task->isDone());
+        $this->task->setIsDone(true);
+        $this->assertSame(true, $this->task->getIsDone());
+    }
+
+    public function testUser()
+    {
+        $user = new User;
+        $this->task->setUser($user);
+        $this->assertSame($user, $this->task->getUser());
     }
 }
