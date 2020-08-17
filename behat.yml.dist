@@ -2,6 +2,9 @@ default:
     suites:
         web:
             contexts:
+                - DoctrineContext:
+                      container: '@service_container'
+                      entityManager: '@doctrine.orm.entity_manager'
                 - Behat\MinkExtension\Context\MinkContext
 
     extensions:
