@@ -1,4 +1,37 @@
 {
+    "behat/behat": {
+        "version": "v3.7.0"
+    },
+    "behat/gherkin": {
+        "version": "v4.6.2"
+    },
+    "behat/mink": {
+        "version": "v1.8.1"
+    },
+    "behat/mink-browserkit-driver": {
+        "version": "v1.3.4"
+    },
+    "behat/mink-extension": {
+        "version": "2.3.1"
+    },
+    "behat/symfony2-extension": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "af4f8fa93b1fee9e6f15d1e208ce743bb31cb2b2"
+        },
+        "files": [
+            "./behat.yml.dist",
+            "./features/bootstrap/FeatureContext.php",
+            "./features/bootstrap/bootstrap.php",
+            "./features/demo.feature"
+        ]
+    },
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -153,6 +186,9 @@
     "symfony/asset": {
         "version": "v4.4.11"
     },
+    "symfony/browser-kit": {
+        "version": "v4.4.11"
+    },
     "symfony/cache": {
         "version": "v4.4.11"
     },
@@ -175,6 +211,9 @@
     "symfony/contracts": {
         "version": "v1.1.9"
     },
+    "symfony/css-selector": {
+        "version": "v4.4.11"
+    },
     "symfony/debug": {
         "version": "v4.4.11"
     },
@@ -182,6 +221,9 @@
         "version": "v4.4.11"
     },
     "symfony/doctrine-bridge": {
+        "version": "v4.4.11"
+    },
+    "symfony/dom-crawler": {
         "version": "v4.4.11"
     },
     "symfony/dotenv": {
