@@ -2,7 +2,6 @@
 
 use Behat\Behat\Context\Context;
 use App\DataFixtures\AppFixtures;
-use App\DataFixtures\TrickFixture;
 use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\ORM\Tools\ToolsException;
 use Doctrine\Persistence\ObjectManager;
@@ -13,7 +12,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class DoctrineContext implements Context
 {
     private $entityManager;
-    private $manager;
     private $passwordEncoder;
 
     /**
@@ -21,13 +19,11 @@ class DoctrineContext implements Context
      *
      * @param EntityManagerInterface       $entityManager
      * @param UserPasswordEncoderInterface $passwordEncoder
-     * @param ObjectManager $manager
      */
-    public function __construct(EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder, ObjectManager $manager)
+    public function __construct(EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->entityManager = $entityManager;
         $this->passwordEncoder = $passwordEncoder;
-        $this->manager = $manager;
     }
 
     /**
@@ -46,6 +42,6 @@ class DoctrineContext implements Context
     protected function loadFixtures()
     {
         $appFixture = new AppFixtures($this->passwordEncoder);
-        $appFixture->load($this->manager);
+        $appFixture->load($this->entityManager);
     }
 }
