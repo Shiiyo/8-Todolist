@@ -21,6 +21,14 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @Route("/tasks/completed", name="completed_task_list")
+     */
+    public function completedTaskListAction(TaskRepository $repo)
+    {
+        return $this->render('task/list.html.twig', ['tasks' => $repo->findCompleted()]);
+    }
+
+    /**
      * @Route("/tasks/create", name="task_create")
      */
     public function createAction(Request $request, EntityManagerInterface $manager)
