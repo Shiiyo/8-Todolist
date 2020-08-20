@@ -1,0 +1,18 @@
+default:
+    suites:
+        web:
+            contexts:
+                - DoctrineContext:
+                      entityManager: '@doctrine.orm.entity_manager'
+                      passwordEncoder: "@security.user_password_encoder.generic"
+                - Behat\MinkExtension\Context\MinkContext
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~

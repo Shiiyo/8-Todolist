@@ -2,6 +2,7 @@
 
 namespace App\Tests\Entity;
 
+use App\Entity\Task;
 use App\Entity\User;
 use PHPUnit\Framework\TestCase;
 
@@ -9,7 +10,7 @@ class UserTest extends TestCase
 {
     private $user;
 
-    public function setUp()
+    protected function setUp() :void
     {
         $this->user = new User();
     }
@@ -18,6 +19,11 @@ class UserTest extends TestCase
     {
         $this->user->setUsername('Test');
         $this->assertSame('Test', $this->user->getUsername());
+    }
+
+    public function testRoles()
+    {
+        $this->assertSame(array('ROLE_USER'), $this->user->getRoles());
     }
 
     public function testPassword()
@@ -32,13 +38,19 @@ class UserTest extends TestCase
         $this->assertSame('Test', $this->user->getEmail());
     }
 
-    public function testSalt()
+    public function testAddTask()
     {
-        $this->assertSame(null, $this->user->getSalt());
+        $task = new Task;
+        $this->user->addTask($task);
+        $this->assertSame($task, $this->user->getTasks()[0]);
     }
 
-    public function testRoles()
+    public function testRemoveTask()
     {
-        $this->assertSame(array('ROLE_USER'), $this->user->getRoles());
+        $task = new Task;
+        $this->user->addTask($task);
+        $this->user->removeTask($task);
+        $this->assertSame(null, $this->user->getTasks()[0]);
     }
+
 }
