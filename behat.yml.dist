@@ -2,10 +2,10 @@ default:
     suites:
         web:
             contexts:
+                - FeatureContext
                 - DoctrineContext:
                       entityManager: '@doctrine.orm.entity_manager'
                       passwordEncoder: "@security.user_password_encoder.generic"
-                - Behat\MinkExtension\Context\MinkContext
 
     extensions:
         Behat\Symfony2Extension:
