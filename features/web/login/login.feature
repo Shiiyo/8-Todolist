@@ -1,6 +1,6 @@
 Feature: Login
 
-    Scenario: Test Login and Logout
+    Scenario: Login success
         Given I am on homepage
         And I follow "Se connecter"
         And I should be on "login"
@@ -8,11 +8,8 @@ Feature: Login
         And I fill in "password" with "admin"
         And I press "Se connecter"
         Then I should be on homepage
-        And I follow "Se déconnecter"
-        Then I should be on homepage
-        And I should see "Se connecter"
 
-    Scenario: Test Login error
+    Scenario: Login fail
         Given I am on homepage
         And I follow "Se connecter"
         Then I should be on "login"
@@ -21,3 +18,7 @@ Feature: Login
         And I press "Se connecter"
         Then I should be on "login"
         And I should see "Invalid credentials"
+
+    Scenario: Show login page
+        Given I am on "login"
+        Then I should see an "form" element
