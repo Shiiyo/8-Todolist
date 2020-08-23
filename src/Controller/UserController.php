@@ -50,6 +50,8 @@ class UserController extends AbstractController
      */
     public function editAction(User $user, Request $request,EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
