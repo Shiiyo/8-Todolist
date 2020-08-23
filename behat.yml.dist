@@ -2,10 +2,10 @@ default:
     suites:
         web:
             contexts:
+                - FeatureContext
                 - DoctrineContext:
                       entityManager: '@doctrine.orm.entity_manager'
                       passwordEncoder: "@security.user_password_encoder.generic"
-                - Behat\MinkExtension\Context\MinkContext
 
     extensions:
         Behat\Symfony2Extension:
@@ -16,3 +16,15 @@ default:
             sessions:
                 default:
                     symfony2: ~
+        LeanPHP\Behat\CodeCoverage\Extension:
+            drivers:
+                - local
+            filter:
+                whitelist:
+                    include:
+                        directories:
+                            'src': ~
+            report:
+                format:   html
+                options:
+                    target: web/coverage-behat

@@ -27,4 +27,3 @@ security:
         - { path: ^/tasks, roles: ROLE_USER}
         - { path: ^/users/list, roles: ROLE_ADMIN}
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/users, roles: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -19,10 +19,11 @@ Lunch the server with:<br/>
 <code>symfony server:start -d</code>
 
 ## Tests
-Lunch unit tests with the command : </br></br>
-For PhpUnit : </br>
+Lunch tests with the following command : </br></br>
+I do unit test on controller with PhpUnit : </br>
 <code>php bin/phpunit</code> </br>
-You can see the coverage on <code>/web/code-coverage/index.html</code>
+You can see the code coverage on <code>/web/coverage-phpunit/index.html</code>
 </br></br>
-For Behat : </br>
-<code>vendor/bin/behat</code>
+And I do functionnal test with Behat : </br>
+<code>vendor/bin/behat</code> </br>
+You can see the code coverage on <code>/web/coverage-behat/index.html</code></br>

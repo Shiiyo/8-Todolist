@@ -37,6 +37,15 @@ class UserFixtures extends Fixture
         $user->setRoles(["ROLE_ADMIN"]);
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'admin'));
         $user->setEmail($faker->email());
+        
+        $manager->persist($user);
+
+        //User for Tests
+        $user = new User;
+        $user->setUsername('User');
+        $user->setRoles(["ROLE_USER"]);
+        $user->setPassword($this->passwordEncoder->encodePassword($user, 'admin'));
+        $user->setEmail($faker->email());
 
         $manager->persist($user);
 
