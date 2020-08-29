@@ -48,6 +48,5 @@ class UserFixtures extends Fixture
         $user->setEmail($faker->email());
 
         $manager->persist($user);
-
     }
 }

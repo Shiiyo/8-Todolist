@@ -52,5 +52,4 @@ class UserTest extends TestCase
         $this->user->removeTask($task);
         $this->assertSame(null, $this->user->getTasks()[0]);
     }
-
 }
