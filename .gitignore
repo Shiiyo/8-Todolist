@@ -13,7 +13,6 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
-/web/bundles/
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -31,5 +30,6 @@
 ###< symfony/phpunit-bridge ###
 
 ###> behat/symfony2-extension ###
+/web/coverage-behat/
 behat.yml
 ###< behat/symfony2-extension ###
