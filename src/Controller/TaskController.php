@@ -95,7 +95,7 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task, EntityManagerInterface $manager)
     {
-        if($this->getUser() == $task->getUser() OR $task->getUser() == null AND $this->container->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
+        if ($this->getUser() == $task->getUser() or $task->getUser() == null and $this->container->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
             $manager->remove($task);
             $manager->flush();
 

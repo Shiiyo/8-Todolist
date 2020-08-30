@@ -48,7 +48,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/edit", name="user_edit")
      */
-    public function editAction(User $user, Request $request,EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function editAction(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         
