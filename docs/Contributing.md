@@ -1,11 +1,12 @@
 # How to contribute to this project?
 
 ## 1. Fork the project
-For it, click on the fork button in GitHub.
+For it, click on the fork button in GitHub. </br>
 ![Alt text](./img/forkButton.png "Fork button")
-
-You will now have a copy of the repository on your own GitHub account. It will show like this:
+</br>
+You will now have a copy of the repository on your own GitHub account. It will show like this:</br>
 ![Alt text](./img/forkProject.png "Fork project")
+</br>
 Copy this repository on your local machine:
 ```shell
 git clone https://github.com/{your_github_username}/8-Todolist.git
