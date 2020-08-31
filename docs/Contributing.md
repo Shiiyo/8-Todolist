@@ -48,7 +48,7 @@ Follow all the step describe on the [installation insctructions](../README.md)
 
 ## 5. Code !
 Develop and work on the issue you choose. </br></br>
- Don't forget to lunch test to be sure you didn't broke anything ;). You can see all the tests command on the [tests section](../README.md). You may also add a new test to show that your change fixes the original problem.
+ Don't forget to lunch test to be sure you didn't broke anything ;). You can see all the tests command on the [tests section](../README.md##Tests). You may also add a new test to show that your change fixes the original problem.
 </br></br>
 Stay focus on the issue you're working on, don't fix others problems or create others features. It's better to create a new issue for each problem and new feature. 
 </br></br>
