@@ -35,5 +35,7 @@ You can see the code coverage on <code>/web/coverage-behat/index.html</code></br
 
 -------------------------------------------------------------------------------
 
-## Diagrams
+## Documentation
+
+### Diagrams
 All the UML diagrams are readable in the folder <code>/docs/diagrams</code></br>
