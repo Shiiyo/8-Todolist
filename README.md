@@ -13,13 +13,35 @@ https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
 -------------------------------------------------------------------------------
 
 ## Install project
-### Config your database on the .env file and run
-<code>symfony console doctrine:database:create</code><br/>
-<code>symfony console doctrine:migrations:migrate</code><br/><br/>
-Then run this to generate fake data into the DB:<br/>
-<code>symfony console doctrine:fixtures:load</code><br/><br/>
-Lunch the server with:<br/>
-<code>symfony server:start -d</code>
+### Clone the project
+```shell
+git clone https://github.com/Shiiyo/8-Todolist.git
+``` 
+
+### Install the bundles
+```shell
+composer install
+``` 
+### Config 
+Config your database on the .env file and run
+```shell
+symfony console doctrine:database:create
+symfony console doctrine:migrations:migrate
+``` 
+Then run this to generate fake data into the DB:
+```shell
+symfony console doctrine:fixtures:load
+``` 
+Lunch the server with:
+```shell
+symfony server:start -d
+``` 
+
+You can test user's connection with these identifiers:
+| Username        | Password    | Role       |
+| :-------------- | :---------- | :--------- |
+| User            | admin       | ROLE_USER  |
+| Shiyo           | admin       | ROLE_ADMIN |
 
 -------------------------------------------------------------------------------
 
