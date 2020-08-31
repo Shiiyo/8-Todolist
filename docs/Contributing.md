@@ -65,4 +65,9 @@ git push origin {branch-name}
 ```
 Your branch is now available on your GitHub account.
 Go to your online account with your browser on the project you will see the "Compare and pull request" button.
- 
+![Alt text](./img/PullRequest.png "Pull request button")
+When you press the button you will see if there is error and conflicts. Solve them if they are some.
+</br></br>
+Set a clear title and a short description to explain what you did. Then click on the "Create pull request" button.
+</br></br>
+Now, wait. The admin of the project will review your request and will merge you work into the project if your work is good and relevant.
