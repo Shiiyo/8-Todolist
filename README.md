@@ -39,3 +39,9 @@ You can see the code coverage on <code>/web/coverage-behat/index.html</code></br
 
 ### Diagrams
 All the UML diagrams are readable in the folder <code>/docs/diagrams</code></br>
+
+### How to contibute to the project
+Read this [document](/docs/Contributing.md)
+
+### How authentification work
+Read this [document](/docs/Authentication.md)

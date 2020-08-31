@@ -1,7 +1,4 @@
-# How to Contribute to this project?
-This guide explain how you can contribute to the project.
-
-------------------------
+# How to contribute to this project?
 
 ## 1. Fork the project
 For it, click on the fork button in GitHub.
