@@ -2,12 +2,10 @@
 Base du projet #8 : Améliorez un projet existant
 <https://openclassrooms.com/projects/ameliorer-un-projet-existant-1>
 
---------------------------------------
 ## Badges
 [![Maintainability](https://api.codeclimate.com/v1/badges/8130524edead3861ae00/maintainability)](https://codeclimate.com/github/Shiiyo/8-Todolist/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/b7b704ef92ab4597a8f6025c95496e12)](https://www.codacy.com/manual/Shiiyo/8-Todolist?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shiiyo/8-Todolist&amp;utm_campaign=Badge_Grade)
 
--------------------------------------------------------------------------------
 
 ## Install project
 ### Clone the project
@@ -40,7 +38,6 @@ You can test user's connection with these identifiers:
 | User            | admin       | ROLE_USER  |
 | Shiyo           | admin       | ROLE_ADMIN |
 
--------------------------------------------------------------------------------
 
 ## Tests
 Lunch tests with the following command : </br></br>
@@ -55,8 +52,6 @@ And I do functionnal test with Behat : </br>
 vendor/bin/behat
 ``` 
 You can see the code coverage on <code>/web/coverage-behat/index.html</code></br>
-
--------------------------------------------------------------------------------
 
 ## Documentation
 
