@@ -1,14 +1,11 @@
-ToDoList
-========
-
+# ToDoList
 Base du projet #8 : Améliorez un projet existant
-https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
+<https://openclassrooms.com/projects/ameliorer-un-projet-existant-1>
 
--------------------------------------------------------------------------------
-
+--------------------------------------
 ## Badges
 [![Maintainability](https://api.codeclimate.com/v1/badges/8130524edead3861ae00/maintainability)](https://codeclimate.com/github/Shiiyo/8-Todolist/maintainability)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3506bcde728343e59e26911635b1479e)](https://www.codacy.com/manual/Shiiyo/8-Todolist?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shiiyo/8-Todolist&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b7b704ef92ab4597a8f6025c95496e12)](https://www.codacy.com/manual/Shiiyo/8-Todolist?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shiiyo/8-Todolist&amp;utm_campaign=Badge_Grade)
 
 -------------------------------------------------------------------------------
 
@@ -48,11 +45,15 @@ You can test user's connection with these identifiers:
 ## Tests
 Lunch tests with the following command : </br></br>
 I do unit test on controller with PhpUnit : </br>
-<code>php bin/phpunit</code> </br>
+```shell
+php bin/phpunit
+``` 
 You can see the code coverage on <code>/web/coverage-phpunit/index.html</code>
 </br></br>
 And I do functionnal test with Behat : </br>
-<code>vendor/bin/behat</code> </br>
+```shell
+vendor/bin/behat
+``` 
 You can see the code coverage on <code>/web/coverage-behat/index.html</code></br>
 
 -------------------------------------------------------------------------------
