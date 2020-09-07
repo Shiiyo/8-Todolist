@@ -16,6 +16,7 @@
 
 		<!-- Custom CSS -->
 		<link href="{{ asset('css/shop-homepage.css') }}" rel="stylesheet">
+		{% block stylesheet %}{% endblock %}
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +40,7 @@
 		<!-- Page Content -->
 		<div class="container">
 			<div class="row">
-				<a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
+				<a href="{{ path('user_create') }}" class="btn btn-primary">Créer un compte</a>
 
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('user_list') }}" class="btn btn-warning">Voir la liste des utilisateurs</a>
@@ -54,7 +55,7 @@
 				{% endif %}
 			</div>
 
-			<div class="row">
+			<div class="row" id="banner">
 				<div class="col-md-12">
 					{% for flash_message in app.session.flashBag.get('success') %}
 						<div class="alert alert-success" role="alert">

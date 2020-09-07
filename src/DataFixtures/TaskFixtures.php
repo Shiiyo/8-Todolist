@@ -17,10 +17,9 @@ class TaskFixtures extends Fixture
         foreach ($users as $user) {
             for ($i = 0; $i < 5; $i++) {
                 $task = new Task;
-
                 $task->setUser($user);
                 $task->setCreatedAt(new \DateTime());
-                $task->setTitle($faker->sentence());
+                $task->setTitle($faker->words(3, true));
                 $task->setContent($faker->paragraph());
                 $task->setIsDone($faker->boolean());
 
