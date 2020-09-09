@@ -11,6 +11,7 @@ Base du projet #8 : Améliorez un projet existant
 ### Clone the project
 ```shell
 git clone https://github.com/Shiiyo/8-Todolist.git
+cd /8-Todolist
 ``` 
 
 ### Install the bundles
@@ -63,3 +64,6 @@ Read this [document](/docs/Contributing.md)
 
 ### How authentification work
 Read this [document](/docs/Authentication.md)
+
+### Quality Audit
+Read this [document](/docs/QualityAudit.md)
