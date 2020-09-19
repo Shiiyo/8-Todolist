@@ -16,7 +16,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/list", name="user_list")
      */
-    public function listAction(UserRepository $repo)
+    public function list(UserRepository $repo)
     {
         return $this->render('user/list.html.twig', ['users' => $repo->findAll()]);
     }
@@ -24,7 +24,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/create", name="user_create")
      */
-    public function createAction(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function create(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -48,7 +48,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/edit", name="user_edit")
      */
-    public function editAction(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function edit(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         
