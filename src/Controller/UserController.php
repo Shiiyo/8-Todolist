@@ -31,7 +31,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if($userRepository->findOneByUsername($user->getUsername()) == false){
+            if ($userRepository->findOneByUsername($user->getUsername()) == false) {
                 $hash = $encoder->encodePassword($user, $user->getPassword());
                 $user->setPassword($hash);
 
@@ -40,13 +40,11 @@ class UserController extends AbstractController
 
                 $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
-                return $this->redirectToRoute('user_list');                
-            }
-            else{
+                return $this->redirectToRoute('user_list');
+            } else {
                 $this->addFlash('error', "Ce pseudo utilisateur est déjà pris");
                 return $this->redirectToRoute('user_create');
             }
-
         }
 
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
@@ -64,8 +62,8 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $userInDB = $userRepository->findOneByUsername($user->getUsername());
-            if ( $userInDB == false || $userInDB->getId() == $user->getId()){
-                                $hash = $encoder->encodePassword($user, $user->getPassword());
+            if ($userInDB == false || $userInDB->getId() == $user->getId()) {
+                $hash = $encoder->encodePassword($user, $user->getPassword());
                 $user->setPassword($hash);
 
                 $manager->flush();
