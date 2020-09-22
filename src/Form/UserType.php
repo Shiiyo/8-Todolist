@@ -21,7 +21,7 @@ class UserType extends AbstractType
                                                 'attr' => ['class' => "form-control"]])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'Les deux mots de passe doivent correspondre.',
+                /*'invalid_message' => 'Les deux mots de passe doivent correspondre.', */
                 'required' => true,
                 'first_options'  => ['label'=>'Mot de passe', 'attr' => ['class' => "form-control"]],
                 'second_options' => ['label'=>'Tapez le mot de passe à nouveau', 'attr' => ['class' => "form-control"]]

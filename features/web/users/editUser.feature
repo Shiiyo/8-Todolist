@@ -34,7 +34,8 @@ Feature: User edit page
         And I fill in "Mot de passe" with "test"
         And I fill in "Tapez le mot de passe à nouveau" with "test"
         And I press "Modifier"
-        Then the response status code should be 500
+        Then the response status code should be 200
+        And I should see "Ce pseudo utilisateur est déjà pris"
 
     Scenario: Fill form with nothing
         Given I am logged in as admin

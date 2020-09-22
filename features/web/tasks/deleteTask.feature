@@ -11,4 +11,4 @@ Feature: Delete a task
 
     Scenario: Delete fail
         And I am on "tasks/1/delete"
-        Then the response status code should be 500
+        Then the response status code should be 200

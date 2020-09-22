@@ -16,7 +16,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/list", name="user_list")
      */
-    public function listAction(UserRepository $repo)
+    public function list(UserRepository $repo)
     {
         return $this->render('user/list.html.twig', ['users' => $repo->findAll()]);
     }
@@ -24,22 +24,27 @@ class UserController extends AbstractController
     /**
      * @Route("/users/create", name="user_create")
      */
-    public function createAction(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function create(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, UserRepository $userRepository)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $hash = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($hash);
+            if ($userRepository->findOneByUsername($user->getUsername()) == false) {
+                $hash = $encoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($hash);
 
-            $manager->persist($user);
-            $manager->flush();
+                $manager->persist($user);
+                $manager->flush();
 
-            $this->addFlash('success', "L'utilisateur a bien été ajouté.");
+                $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
-            return $this->redirectToRoute('user_list');
+                return $this->redirectToRoute('user_list');
+            } else {
+                $this->addFlash('error', "Ce pseudo utilisateur est déjà pris");
+                return $this->redirectToRoute('user_create');
+            }
         }
 
         return $this->render('user/create.html.twig', ['form' => $form->createView()]);
@@ -48,7 +53,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/edit", name="user_edit")
      */
-    public function editAction(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function edit(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, UserRepository $userRepository)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         
@@ -56,14 +61,19 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $hash = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($hash);
+            $userInDB = $userRepository->findOneByUsername($user->getUsername());
+            if ($userInDB == false || $userInDB->getId() == $user->getId()) {
+                $hash = $encoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($hash);
 
-            $manager->flush();
+                $manager->flush();
 
-            $this->addFlash('success', "L'utilisateur a bien été modifié");
+                $this->addFlash('success', "L'utilisateur a bien été modifié");
 
-            return $this->redirectToRoute('user_list');
+                return $this->redirectToRoute('user_list');
+            }
+            $this->addFlash('error', "Ce pseudo utilisateur est déjà pris");
+            return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'user' => $user]);
         }
 
         return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'user' => $user]);
