@@ -26,7 +26,8 @@ Feature: Add User
         And I fill in "Adresse email" with "test@gmail.com"
         And I additionally select "Administrateur" from "Role"
         And I press "Ajouter"
-        Then the response status code should be 500
+        Then the response status code should be 200
+        And I should see "Ce pseudo utilisateur est déjà pris"
 
 
     Scenario: Fill form with nothing
